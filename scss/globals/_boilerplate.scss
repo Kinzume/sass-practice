@@ -1,0 +1,22 @@
+@use "../util" as u; /*creates a namespace called u*/
+
+html {
+  box-sizing: border-box;
+  font-size: 100%; /*matches font-size to browser's default font-size*/
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: u.$font; /*refer to the namespace before using sass variables*/
+  background-color: var(
+    --background-color
+  ); /*this is an example of a css custom property (this is native css code so will show up in the browser devtools)*/
+  color: var(--text-color);
+}
